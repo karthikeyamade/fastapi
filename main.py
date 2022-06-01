@@ -5,7 +5,7 @@ driver='/opt/microsoft/msodbcsql18/lib64/libmsodbcsql-18.0.so.1.1'
 server='karthikeya.database.windows.net'
 database='karthikeya'
 username='karthikeya'
-password='hibyeazure@1'
+password='*******'
 eat={1:"karthikeya"}
 @app.get("/get/{mess}")
 def select(mess):
