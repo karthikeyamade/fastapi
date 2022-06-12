@@ -5,8 +5,10 @@ driver='/opt/microsoft/msodbcsql18/lib64/libmsodbcsql-18.0.so.1.1'
 server='karthikeya.database.windows.net'
 database='karthikeya'
 username='karthikeya'
-password='*******'
-eat={1:"karthikeya"}
+password='hibyeazure@1'
+with pyodbc.connect('DRIVER='+ driver + '; SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password) as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("create or replace table username(id int NOT NULL,name varchar(50),PRIMARY KEY(id)")
 @app.get("/get/{mess}")
 def select(mess):
   with pyodbc.connect('DRIVER='+ driver + '; SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password) as conn:
